@@ -1,0 +1,5 @@
+Title: Senior Product/Platform Engineer
+ExperienceYears: 8
+Skills: Azure, Kubernetes, Terraform, Python, DevOps, Postgres, Redis, Docker
+
+Experience includes delivering AI-enabled platforms and cloud migrations.

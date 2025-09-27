@@ -1,0 +1,5 @@
+Title: Senior Azure Solutions Architect
+RequiredYears: 6
+Skills: Azure, Kubernetes, Terraform, Python, Azure Cognitive Search, Azure OpenAI, Azure AD, Networking, DevOps
+
+We are seeking an architect to lead enterprise Azure solutions, leveraging vector search, OpenAI, and modern DevOps.

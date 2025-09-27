@@ -1,0 +1,11 @@
+python-dotenv
+streamlit
+azure-identity
+azure-search-documents
+azure-storage-blob
+azure-ai-formrecognizer
+azure-ai-textanalytics
+openai
+tiktoken
+numpy
+requests
