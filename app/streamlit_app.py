@@ -16,7 +16,7 @@ st.set_page_config(page_title='Azure AI Resume ↔ Job Match', page_icon='🧠')
 st.title('🧠 Talentox AI Resume ↔ Job Match (POC)')
 
 with st.expander('ℹ️ About this demo'):
-    st.write('Minimal proof-of-concept y Goddy Otuwho to demonstrate Azure Cognitive Search + Azure OpenAI for resume ↔ job matching with explainability.')
+    st.write('Minimal proof-of-concept by Goddy Otuwho to demonstrate Azure Cognitive Search + Azure OpenAI for resume ↔ job matching with explainability.')
 
 job_file = st.file_uploader('Upload a Job Description (TXT)', type=['txt'])
 resume_files = st.file_uploader('Upload Resumes (TXT for demo)', type=['txt'], accept_multiple_files=True)
