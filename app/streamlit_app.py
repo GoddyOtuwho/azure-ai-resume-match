@@ -10,7 +10,7 @@ from src.ingest_job import parse_job_text
 load_dotenv()
 
 st.set_page_config(page_title='Azure AI Resume ↔ Job Match', page_icon='🧠')
-st.title('🧠 Azure AI Resume ↔ Job Match (POC)')
+st.title('🧠 Talentox AI Resume ↔ Job Match (POC)')
 
 with st.expander('ℹ️ About this demo'):
     st.write('Minimal proof-of-concept to demonstrate Azure Cognitive Search + Azure OpenAI for resume ↔ job matching with explainability.')
