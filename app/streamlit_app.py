@@ -10,7 +10,6 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("Talentox AI Resume ↔ Job Match (POC)")
 
 
 st.set_page_config(page_title='Azure AI Resume ↔ Job Match', page_icon='🧠')
