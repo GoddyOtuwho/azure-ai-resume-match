@@ -1,13 +1,17 @@
 import sys, os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-import os, json
-import streamlit as st
-from dotenv import load_dotenv
-from src.search_match import ensure_index, embed_text, blended_score, explain_match
-from src.ingest_resume import parse_resume_text
-from src.ingest_job import parse_job_text
 
-load_dotenv()
+import streamlit as st
+
+# ✅ Configure page settings before any Streamlit elements
+st.set_page_config(
+    page_title="Talentox AI Resume ↔ Job Match (POC)",
+    page_icon="💼",  # favicon as emoji
+    layout="wide"
+)
+
+st.title("Talentox AI Resume ↔ Job Match (POC)")
+
 
 st.set_page_config(page_title='Azure AI Resume ↔ Job Match', page_icon='🧠')
 st.title('🧠 Talentox AI Resume ↔ Job Match (POC)')
