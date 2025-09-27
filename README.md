@@ -1,83 +1,24 @@
-# Azure AI Resume ↔ Job Match (POC)
+# 🧠 Azure AI Resume ↔ Job Match
 
-A production-lean **proof of concept** showing how to:
-- Parse resumes and job descriptions
-- Create embeddings and store vectors in **Azure Cognitive Search**
-- Retrieve top matches and generate **explainable fit** using **Azure OpenAI**
-- Display results in a minimal **Streamlit** UI
+[![Python](https://img.shields.io/badge/Python-3.10-blue)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-App-red)](https://streamlit.io/)
+[![Azure](https://img.shields.io/badge/Azure-OpenAI%20%7C%20Cognitive%20Search-0089D6)](https://azure.microsoft.com)
 
-> This repo is intentionally lightweight so you can extend quickly.
+AI-powered **proof of concept (POC)** showing how to:
+- Parse resumes & job descriptions automatically
+- Match candidates to jobs with **semantic search + scoring**
+- Generate explainable results (strengths, gaps, and summary) using Azure OpenAI
 
-## ⚙️ Architecture (POC)
-```
-[Streamlit UI] -> [Azure Storage: resumes/jobs]
-    -> [AI Document Intelligence] -> parsed JSON
-    -> [AI Language] (optional) -> job skills/phrases
-    -> [Azure OpenAI Embeddings] -> vectors
-    -> [Azure Cognitive Search] (vector index)
-    -> [Azure OpenAI GPT] (fit summary + reasons)
-```
-
-## 📦 Project Structure
-```
-azure-ai-resume-match/
-├─ app/
-│  └─ streamlit_app.py
-├─ src/
-│  ├─ azure_clients.py
-│  ├─ ingest_resume.py
-│  ├─ ingest_job.py
-│  ├─ search_match.py
-│  └─ prompts.py
-├─ infra/
-│  └─ main.bicep
-├─ data/
-│  └─ sample/
-│     ├─ job_sample.txt
-│     └─ resume_sample.txt
-├─ .gitignore
-├─ LICENSE
-├─ requirements.txt
-└─ README.md
-```
-
-## 🔐 Environment Variables
-Create a `.env` in the project root (or export these in your environment):
-```
-AZURE_OPENAI_ENDPOINT=...
-AZURE_OPENAI_KEY=...
-AZURE_OPENAI_EMBEDDING_DEPLOYMENT=text-embedding-3-large
-AZURE_OPENAI_CHAT_DEPLOYMENT=gpt-4o
-
-AZURE_SEARCH_ENDPOINT=...
-AZURE_SEARCH_KEY=...
-AZURE_SEARCH_INDEX=talent-match-index
-
-AZURE_STORAGE_CONNECTION_STRING=...
-AZURE_DOC_INTELLIGENCE_ENDPOINT=...
-AZURE_DOC_INTELLIGENCE_KEY=...
-```
+---
 
 ## 🚀 Quickstart (Local)
+
+Clone the repo and run the Streamlit demo:
+
 ```bash
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
+git clone https://github.com/GoddyOtuwho/azure-ai-resume-match.git
+cd azure-ai-resume-match
+python3 -m venv .venv
+source .venv/bin/activate   # On Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-
-# run the demo UI
 streamlit run app/streamlit_app.py
-```
-
-## 🧱 Deploy Infra (optional)
-Use the bicep in `infra/main.bicep` as a starting point to provision Search, Storage, and OpenAI resources.
-
-## 🧪 Demo Flow
-1. Drop a job description (TXT) and a few resumes (PDF/DOCX) into the app.
-2. The app embeds the job, queries the vector index for top-K resumes.
-3. It blends vector score + skill overlap + experience alignment.
-4. It calls GPT once per candidate to produce an **explainable JSON** (strengths, gaps, summary).
-5. Results render as cards you can export or copy.
-
-## 📝 Notes
-- This is a POC: add proper Key Vault, VNET, RBAC, and PII handling for prod.
-- Replace sample code with your actual parsing/ingestion to Azure services.
