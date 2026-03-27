@@ -30,6 +30,17 @@ This project serves as both:
 
 ---
 
+## 💼 Business Value
+
+This system demonstrates how AI can improve hiring efficiency by:
+
+- Reducing manual resume screening time  
+- Providing consistent, explainable candidate evaluation  
+- Supporting better hiring decisions with structured insights  
+- Enabling scalable recruitment workflows in enterprise 
+
+---
+
 ## 🎯 Objectives
 
 - Demonstrate how AI can assist (not replace) hiring decisions  
